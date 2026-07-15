@@ -1,13 +1,17 @@
-import { Typography, Container } from "@mui/material";
+import Typography from "@mui/material/Typography";
 
-function Dashboard() {
+import Layout from "../../components/layout/Layout";
+
+export default function Dashboard() {
   return (
-    <Container sx={{ mt: 5 }}>
-      <Typography variant="h4">
-        Dashboard
+    <Layout>
+
+      <Typography variant="h3">
+
+        Welcome Back 👋
+
       </Typography>
-    </Container>
+
+    </Layout>
   );
 }
-
-export default Dashboard;

@@ -2,19 +2,40 @@ import { createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
   palette: {
+    mode: "light",
+
     primary: {
-      main: "#1976d2",
+      main: "#2563EB",
     },
+
     secondary: {
-      main: "#9c27b0",
+      main: "#1E40AF",
     },
+
     background: {
-      default: "#f5f5f5",
+      default: "#F5F7FA",
+      paper: "#FFFFFF",
+    },
+
+    success: {
+      main: "#22C55E",
+    },
+
+    warning: {
+      main: "#F59E0B",
+    },
+
+    error: {
+      main: "#EF4444",
     },
   },
 
   typography: {
-    fontFamily: "Roboto, Arial, sans-serif",
+    fontFamily: "Poppins",
+
+    h3: {
+      fontWeight: 700,
+    },
 
     h4: {
       fontWeight: 700,
@@ -26,7 +47,12 @@ const theme = createTheme({
 
     button: {
       textTransform: "none",
+      fontWeight: 600,
     },
+  },
+
+  shape: {
+    borderRadius: 12,
   },
 });
 
