@@ -1,8 +1,18 @@
-import { AppBar, Toolbar, Typography } from "@mui/material";
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Box,
+} from "@mui/material";
+
+import ThemeToggle from "../ui/ThemeToggle";
 
 export default function Navbar() {
   return (
-    <AppBar position="static" elevation={0}>
+    <AppBar
+      position="static"
+      elevation={0}
+    >
       <Toolbar>
 
         <Typography
@@ -11,6 +21,10 @@ export default function Navbar() {
         >
           TaskFlow Pro
         </Typography>
+
+        <Box sx={{ flexGrow: 1 }} />
+
+        <ThemeToggle />
 
       </Toolbar>
     </AppBar>
