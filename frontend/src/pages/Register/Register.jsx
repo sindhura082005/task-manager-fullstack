@@ -6,13 +6,19 @@ import {
   Link,
 } from "@mui/material";
 
+import { Link as RouterLink, useNavigate } from "react-router-dom";
+
 import AuthLayout from "../../components/layout/AuthLayout";
 import AuthCard from "../../components/common/AuthCard";
 import Logo from "../../components/common/Logo";
 
 export default function Register() {
+
+  const navigate = useNavigate();
+
   return (
     <AuthLayout>
+
       <AuthCard>
 
         <Logo />
@@ -53,13 +59,17 @@ export default function Register() {
             fullWidth
             size="large"
             variant="contained"
+            onClick={() => navigate("/dashboard")}
           >
             Register
           </Button>
 
           <Typography align="center">
             Already have an account?{" "}
-            <Link href="/">
+            <Link
+              component={RouterLink}
+              to="/"
+            >
               Login
             </Link>
           </Typography>
@@ -67,6 +77,7 @@ export default function Register() {
         </Stack>
 
       </AuthCard>
+
     </AuthLayout>
   );
 }

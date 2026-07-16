@@ -6,7 +6,6 @@ import {
   Checkbox,
   FormControlLabel,
   IconButton,
-  InputAdornment,
   Link
 } from "@mui/material";
 
@@ -15,29 +14,26 @@ import LockIcon from "@mui/icons-material/Lock";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
-import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink, useNavigate } from "react-router-dom";
 
 import Logo from "../../components/common/Logo";
 import PrimaryButton from "../../components/common/Button";
 
 export default function Login() {
-  const [showPassword, setShowPassword] =
-    useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+
+  // Navigation object
+  const navigate = useNavigate();
 
   return (
     <Box
       sx={{
         minHeight: "100vh",
-
         background:
           "linear-gradient(135deg,#4F46E5,#2563EB,#7C3AED)",
-
         display: "flex",
-
         justifyContent: "center",
-
         alignItems: "center",
-
         p: 3
       }}
     >
@@ -45,11 +41,8 @@ export default function Login() {
         elevation={12}
         sx={{
           width: 500,
-
           p: 5,
-
           borderRadius: 5,
-
           backdropFilter: "blur(20px)"
         }}
       >
@@ -62,6 +55,8 @@ export default function Login() {
         >
           Welcome Back 👋
         </Typography>
+
+        {/* Email */}
 
         <Box mb={2}>
           <Typography mb={1}>Email</Typography>
@@ -86,6 +81,8 @@ export default function Login() {
           </Box>
         </Box>
 
+        {/* Password */}
+
         <Box>
           <Typography mb={1}>Password</Typography>
 
@@ -98,11 +95,7 @@ export default function Login() {
             <LockIcon sx={{ mr: 1 }} />
 
             <input
-              type={
-                showPassword
-                  ? "text"
-                  : "password"
-              }
+              type={showPassword ? "text" : "password"}
               style={{
                 width: "100%",
                 padding: 14,
@@ -132,7 +125,11 @@ export default function Login() {
           sx={{ mt: 2 }}
         />
 
-        <PrimaryButton>
+        {/* Login Button */}
+
+        <PrimaryButton
+          onClick={() => navigate("/dashboard")}
+        >
           Sign In →
         </PrimaryButton>
 

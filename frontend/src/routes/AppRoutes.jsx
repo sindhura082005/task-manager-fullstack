@@ -8,23 +8,9 @@ export default function AppRoutes() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Login Page */}
-        <Route
-          path="/"
-          element={<Login />}
-        />
-
-        {/* Register Page */}
-        <Route
-          path="/register"
-          element={<Register />}
-        />
-
-        {/* Dashboard */}
-        <Route
-          path="/dashboard"
-          element={<Dashboard />}
-        />
+        <Route path="/" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </BrowserRouter>
   );
